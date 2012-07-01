@@ -1,0 +1,71 @@
+.lnf-filter-bottom, .lnf-filter-top {
+	margin:3px;
+}
+.admin-bar.branch-3-2 .lnf-filter-top,
+.admin-bar.branch-3-3 .lnf-filter-top {
+	position:relative;
+	top:28px;
+}
+/* Word Highlight */
+.lnf-highlight {
+	background:#FFED2B;
+	color:#000;
+	display:inline-block;
+	text-shadow:none;
+}
+.lnf-focus, #adminmenu .lnf-focus .wp-submenu {
+	border:2px solid #FFED2B;
+}
+#adminmenu a.lnf-focused-item, .lnf-focused-item .lnf-highlight {
+	text-decoration:underline;
+}
+#adminmenu .lnf-focus .wp-menu-arrow,
+#adminmenu .lnf-focus .wp-menu-arrow div {
+	display:block;
+	z-index:1001;
+}
+#adminmenu .lnf-focus .wp-menu-img {
+	opacity:1;
+
+	filter:alpha(opacity=100);
+}
+#adminmenu .lnf-focus .wp-submenu {
+	z-index:1000;
+}
+#adminmenu li .wp-submenu.lnf-sub-open, .folded #adminmenu .wp-has-current-submenu .wp-submenu.lnf-sub-open {
+	display:block;
+}
+.lnf-error {
+	color:#FF0000;
+}
+
+/* Admin Settings Colours */
+.lnf-colour {
+	display:inline-block;
+	height:32px;
+	margin-right:10px;
+	width:32px;
+
+	-webkit-box-shadow:1px 1px 2px 0px rgba(0,0,0,0.5); /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+			box-shadow:1px 1px 2px 0px rgba(0,0,0,0.5); /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+
+	-webkit-transition:all 0.2s ease-out;  /* Saf3.2+, Chrome */
+	   -moz-transition:all 0.2s ease-out;  /* FF4+ */
+		 -o-transition:all 0.2s ease-out;  /* Opera 10.5+ */
+			transition:all 0.2s ease-out;
+}
+.lnf-colour.selected {
+	border:1px solid black !important; /* Needs !important to override the border in the style attribute (allows for dynamic adding of colours) */
+}
+.lnf-colour:not(.selected) {
+	cursor:pointer;
+}
+.lnf-colour:not(.selected):hover {
+	height:35px;
+	margin-left:-3px;
+	margin-top:-3px;
+	width:35px;
+
+	-webkit-box-shadow:2px 2px 4px 0px rgba(0,0,0,0.5); /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+			box-shadow:2px 2px 4px 0px rgba(0,0,0,0.5); /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+}

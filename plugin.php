@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Live Admin Nav Filter
-Plugin URI: TODO
+Plugin URI: https://github.com/remybach/wp-live-admin-nav-filter
 Description: Add a search box to the admin nav that allows you to more easily find that menu item you can't see at a glance.
 Version: 1.0
 Author: Rémy Bach
@@ -52,7 +52,7 @@ class LiveAdminNavFilter {
 
 	/**
 	 * Registers and enqueues admin-specific JavaScript.
-	 */	
+	 */
 	public function register_admin_scripts() {
 		wp_register_script( 'live-admin-nav-filter-admin-script', plugins_url( 'live-admin-nav-filter/js/admin.js' ) );
 		wp_enqueue_script( 'live-admin-nav-filter-admin-script' );
@@ -225,47 +225,47 @@ class LiveAdminNavFilter {
 	/* HTML output for individual settings */
 	public function display_setting( $args = array() ) {
 		extract( $args );
-		
+
 		$options = get_option( 'lnf-options' );
-		
+
 		if ( ! isset( $options[$id] ) && $type != 'checkbox' ) {
 			$options[$id] = $std;
 		} else if ( ! isset( $options[$id] ) ) {
 			$options[$id] = 0;
 		}
-		
+
 		$field_class = '';
 		if ( $class != '' ) {
 			$field_class = ' ' . $class;
 		}
-		
+
 		switch ( $type ) {
-			
+
 			case 'heading':
 				echo '</td></tr><tr valign="top"><td colspan="2"><h4>' . $desc . '</h4>';
 				break;
-			
+
 			case 'checkbox':
-				
+
 				echo '<input class="checkbox' . $field_class . '" type="checkbox" id="' . $id . '" name="lnf-options[' . $id . ']" value="1" ' . checked( $options[$id], 1, false ) . ' /> <label for="' . $id . '">' . $desc . '</label>';
-				
+
 				break;
-			
+
 			case 'select':
 				echo '<select class="select' . $field_class . '" name="lnf-options[' . $id . ']">';
-				
+
 				foreach ( $choices as $value => $label ) {
 					echo '<option value="' . esc_attr( $value ) . '"' . selected( $options[$id], $value, false ) . '>' . $label . '</option>';
 				}
-				
+
 				echo '</select>';
-				
+
 				if ( $desc != '' ) {
 					echo '<br /><span class="description">' . $desc . '</span>';
 				}
-				
+
 				break;
-			
+
 			case 'radio':
 				$i = 0;
 				foreach ( $choices as $value => $label ) {
@@ -275,40 +275,40 @@ class LiveAdminNavFilter {
 					}
 					$i++;
 				}
-				
+
 				if ( $desc != '' ) {
 					echo '<br /><span class="description">' . $desc . '</span>';
 				}
-				
+
 				break;
-			
+
 			case 'textarea':
 				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="lnf-options[' . $id . ']" placeholder="' . $std . '" rows="5" cols="30">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
-				
+
 				if ( $desc != '' ) {
 					echo '<br /><span class="description">' . $desc . '</span>';
 				}
-				
+
 				break;
-			
+
 			case 'password':
 				echo '<input class="regular-text' . $field_class . '" type="password" id="' . $id . '" name="lnf-options[' . $id . ']" value="' . esc_attr( $options[$id] ) . '" />';
-				
+
 				if ( $desc != '' ) {
 					echo '<br /><span class="description">' . $desc . '</span>';
 				}
-				
+
 				break;
-			
+
 			case 'text':
 			default:
 		 		echo '<input class="regular-text' . $field_class . '" type="text" id="' . $id . '" name="lnf-options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
-		 		
+
 		 		if ( $desc != '' ) {
 		 			echo '<br /><span class="description">' . $desc . '</span>';
 		 		}
-		 		
-		 		break;	
+
+		 		break;
 		}
 	} // end display_setting
 
@@ -317,7 +317,7 @@ class LiveAdminNavFilter {
 	 */
 	public function validate_settings( $input ) {
 		$options = get_option( 'lnf-options' );
-		
+
 		foreach ( $this->checkboxes as $id ) {
 			if ( isset( $options[$id] ) && ! isset( $input[$id] ) )
 				unset( $options[$id] );
@@ -329,7 +329,7 @@ class LiveAdminNavFilter {
 				return false;
 			}
 		}
-		
+
 		return $input;
 	} // end validate_settings
 

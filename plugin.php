@@ -37,16 +37,13 @@ class LiveAdminNavFilter {
 		if ( ! get_option( 'lnf-options' ) ) {
 			$this->initialize_settings();
 		}
-
-		register_activation_hook( __FILE__, array( &$this, 'activate' ) );
-		register_deactivation_hook( __FILE__, array( &$this, 'deactivate' ) );
 	} // end constructor
 
 	/**
 	 * Registers and enqueues admin-specific styles.
 	 */
 	public function register_admin_styles() {
-		wp_register_style( 'live-admin-nav-filter-admin-styles', plugins_url( 'live-admin-nav-filter/css/admin.css' ) );
+		wp_register_style( 'live-admin-nav-filter-admin-styles', plugins_url( '/css/admin.css' , __FILE__ ) );
 		wp_enqueue_style( 'live-admin-nav-filter-admin-styles' );
 	} // end register_admin_styles
 
@@ -54,7 +51,7 @@ class LiveAdminNavFilter {
 	 * Registers and enqueues admin-specific JavaScript.
 	 */
 	public function register_admin_scripts() {
-		wp_register_script( 'live-admin-nav-filter-admin-script', plugins_url( 'live-admin-nav-filter/js/admin.js' ) );
+		wp_register_script( 'live-admin-nav-filter-admin-script', plugins_url( '/js/admin.js' , __FILE__ ) );
 		wp_enqueue_script( 'live-admin-nav-filter-admin-script' );
 	} // end register_admin_scripts
 

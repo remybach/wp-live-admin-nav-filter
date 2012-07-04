@@ -4,7 +4,7 @@ Donate link: Through PayPal... remy[at]bach.me.uk
 Tags: admin, nav, filter, live filter, navigation, navigation search, admin search
 Requires at least: 3.2
 Tested up to: 3.4.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Add a search box to the admin nav that allows you to more easily find that menu item you can't see at a glance.
 
@@ -31,6 +31,9 @@ Add a search box to the admin nav that allows you to more easily find that menu 
 3. The settings screen.
 
 == Changelog ==
+
+= 1.0.1 =
+* Bug Fixes
 
 = 1.0 =
 * Initial Release

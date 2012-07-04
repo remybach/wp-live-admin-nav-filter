@@ -3,7 +3,7 @@
 Plugin Name: Live Admin Nav Filter
 Plugin URI: https://github.com/remybach/wp-live-admin-nav-filter
 Description: Add a search box to the admin nav that allows you to more easily find that menu item you can't see at a glance.
-Version: 1.0
+Version: 1.0.1
 Author: Rémy Bach
 Author URI: http://remy.bach.me.uk
 License: http://remybach.mit-license.org/
